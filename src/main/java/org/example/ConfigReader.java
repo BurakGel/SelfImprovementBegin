@@ -1,10 +1,14 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 public class ConfigReader {
+    private static final Logger logger = LoggerFactory.getLogger(ConfigReader.class);
     private static Properties properties;
 
     static {
@@ -17,7 +21,7 @@ public class ConfigReader {
             properties.load(inputStream);
             inputStream.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Config dosyası yüklenirken hata oluştu: ", e);
         }
     }
 
