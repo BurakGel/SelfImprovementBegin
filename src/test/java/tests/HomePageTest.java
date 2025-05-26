@@ -7,10 +7,8 @@ import org.testng.annotations.Test;
 public class HomePageTest extends BaseTest {
 
     @Test
-    public void searchLaptopOnTrendyol() {
-        // Google anasayfası baseUrl olarak config'de tanımlı olmalı (örnek: https://www.google.com)
+    public void firstSeleniumAutomation() {
 
-        // Arama kutusunu bul (Google'ın arama kutusu name="q" ile bulunur)
         driver.findElement(By.id("firstname")).sendKeys("Burak");
         driver.findElement(By.id("surname")).sendKeys("Gel");
         new Select(driver.findElement(By.id("gender"))).selectByValue("male");
